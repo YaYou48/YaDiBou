@@ -1,0 +1,192 @@
+body,
+html {
+  width: 100%; }
+
+.nested {
+  display: grid; }
+
+div {
+  border: 1px white solid; }
+
+.container {
+  display: grid;
+  grid-template-areas: "a b";
+  grid-template-columns: 1fr 19fr; }
+  .container aside {
+    width: 100%;
+    height: 100%;
+    grid-area: a;
+    background-color: black; }
+  .container .main {
+    grid-area: b; }
+    .container .main header {
+      grid-template-areas: "a a a a a a" "b c c c c c" "b d d d d d" "b e e e e e";
+      grid-template-columns: 1fr 5fr; }
+      .container .main header .div1 {
+        background: red;
+        grid-area: a; }
+      .container .main header .div2 {
+        background: grey;
+        grid-area: b; }
+      .container .main header .div3 {
+        background: blue;
+        grid-area: c; }
+      .container .main header .div4 {
+        background: yellow;
+        grid-area: d;
+        grid-template-areas: "a b c d e";
+        grid-template-columns: 4fr 4fr 4fr 4fr 1fr; }
+      .container .main header .div5 {
+        background: green;
+        grid-area: e; }
+  .container article {
+    grid-template-areas: "h1 h1 h1 h1" "a a b c" "a a d d" "e e f f"; }
+    .container article h1 {
+      grid-area: h1; }
+    .container article .div1 {
+      background: red;
+      grid-area: a; }
+    .container article .div2 {
+      background: grey;
+      grid-area: b; }
+    .container article .div3 {
+      background: blue;
+      grid-area: c; }
+    .container article .div4 {
+      background: yellow;
+      grid-area: d; }
+    .container article .div5 {
+      background: green;
+      grid-area: e; }
+    .container article .div6 {
+      background: purple;
+      grid-area: f; }
+  .container figure {
+    grid-template-areas: "h2 h2 h2 h2 h2" "a b c d e"; }
+    .container figure h1 {
+      grid-area: h2; }
+    .container figure .div1 {
+      background: red;
+      grid-area: a; }
+    .container figure .div2 {
+      background: grey;
+      grid-area: b; }
+    .container figure .div3 {
+      background: blue;
+      grid-area: c; }
+    .container figure .div4 {
+      background: yellow;
+      grid-area: d; }
+    .container figure .div5 {
+      background: green;
+      grid-area: e; }
+  .container section .nested {
+    grid-template-areas: "a b";
+    grid-template-columns: 1fr 1fr; }
+    .container section .nested .left {
+      grid-template-areas: "h2" "a";
+      grid-template-columns: 1fr;
+      grid-area: a; }
+      .container section .nested .left h2 {
+        grid-area: h2; }
+      .container section .nested .left .div1 {
+        background: red;
+        grid-area: a; }
+    .container section .nested .right {
+      grid-template-areas: "h2 h2 h2 h2" "a b c d" "e f g h";
+      grid-template-columns: 1fr 1fr 1fr 1fr; }
+      .container section .nested .right h2 {
+        grid-area: h2; }
+      .container section .nested .right .div1 {
+        background: red;
+        grid-area: a; }
+      .container section .nested .right .div2 {
+        background: grey;
+        grid-area: b; }
+      .container section .nested .right .div3 {
+        background: blue;
+        grid-area: c; }
+      .container section .nested .right .div4 {
+        background: yellow;
+        grid-area: d; }
+      .container section .nested .right .div5 {
+        background: green;
+        grid-area: e; }
+      .container section .nested .right .div6 {
+        background: purple;
+        grid-area: f; }
+      .container section .nested .right .div7 {
+        background: lightblue;
+        grid-area: g; }
+      .container section .nested .right .div8 {
+        background: pink;
+        grid-area: h; }
+  .container #last {
+    display: grid;
+    grid-template-areas: "h2 h2 h2 h2" "a b c d" "e e e e";
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+    .container #last h2 {
+      grid-area: h2; }
+    .container #last .div1 {
+      background: red;
+      grid-area: a; }
+    .container #last .div2 {
+      background: grey;
+      grid-area: b; }
+    .container #last .div3 {
+      background: blue;
+      grid-area: c; }
+    .container #last .div4 {
+      background: yellow;
+      grid-area: d; }
+    .container #last .div5 {
+      background: green;
+      grid-area: e; }
+  .container #orNot {
+    display: grid;
+    grid-template-areas: "f g h i j";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+    .container #orNot .div6 {
+      background: purple;
+      grid-area: f; }
+    .container #orNot .div7 {
+      background: lightblue;
+      grid-area: g; }
+    .container #orNot .div8 {
+      background: pink;
+      grid-area: h; }
+    .container #orNot .div9 {
+      background: brown;
+      grid-area: i; }
+    .container #orNot .div10 {
+      background: orange;
+      grid-area: j; }
+  .container footer {
+    display: grid;
+    grid-template-areas: "a b c d e f g ";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
+    .container footer h2 {
+      grid-area: h2; }
+    .container footer .div1 {
+      background: red;
+      grid-area: a; }
+    .container footer .div2 {
+      background: grey;
+      grid-area: b; }
+    .container footer .div3 {
+      background: blue;
+      grid-area: c; }
+    .container footer .div4 {
+      background: yellow;
+      grid-area: d; }
+    .container footer .div5 {
+      background: green;
+      grid-area: e; }
+    .container footer .div6 {
+      background: purple;
+      grid-area: f; }
+    .container footer .div7 {
+      background: lightblue;
+      grid-area: g; }
+
+/*# sourceMappingURL=master.css.map */

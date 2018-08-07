@@ -1,0 +1,310 @@
+body,
+html {
+    width: 100%;
+}
+
+.nested {
+    display: grid;
+}
+
+div {
+    border: 1px white solid;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: "a b";
+    grid-template-columns: 1fr 19fr;
+
+    aside {
+        width: 100%;
+        height: 100%;
+        grid-area: a;
+        background-color: black;
+    }
+
+    .main {
+        grid-area: b;
+
+        header {
+            grid-template-areas: "a a a a a a" "b c c c c c" "b d d d d d" "b e e e e e";
+            grid-template-columns: 1fr 5fr;
+
+            .div1 {
+                background: red;
+                grid-area: a;
+            }
+
+            .div2 {
+                background: grey;
+                grid-area: b;
+            }
+
+            .div3 {
+                background: blue;
+                grid-area: c;
+            }
+
+            .div4 {
+                background: yellow;
+                grid-area: d;
+                grid-template-areas: "a b c d e";
+                grid-template-columns: 4fr 4fr 4fr 4fr 1fr;
+            }
+
+            .div5 {
+                background: green;
+                grid-area: e;
+            }
+        }
+    }
+
+    article {
+        grid-template-areas: "h1 h1 h1 h1" "a a b c" "a a d d" "e e f f";
+
+        h1 {
+            grid-area: h1;
+        }
+
+        .div1 {
+            background: red;
+            grid-area: a;
+        }
+
+        .div2 {
+            background: grey;
+            grid-area: b;
+        }
+
+        .div3 {
+            background: blue;
+            grid-area: c;
+        }
+
+        .div4 {
+            background: yellow;
+            grid-area: d;
+        }
+
+        .div5 {
+            background: green;
+            grid-area: e;
+        }
+
+        .div6 {
+            background: purple;
+            grid-area: f;
+        }
+    }
+
+    figure {
+        grid-template-areas: "h2 h2 h2 h2 h2" "a b c d e";
+
+        h1 {
+            grid-area: h2;
+        }
+
+        .div1 {
+            background: red;
+            grid-area: a;
+        }
+
+        .div2 {
+            background: grey;
+            grid-area: b;
+        }
+
+        .div3 {
+            background: blue;
+            grid-area: c;
+        }
+
+        .div4 {
+            background: yellow;
+            grid-area: d;
+        }
+
+        .div5 {
+            background: green;
+            grid-area: e;
+        }
+    }
+
+    section {
+        .nested {
+            grid-template-areas: "a b";
+            grid-template-columns: 1fr 1fr;
+
+            .left {
+                grid-template-areas: "h2" "a";
+                grid-template-columns: 1fr;
+                grid-area: a;
+
+                h2 {
+                    grid-area: h2;
+                }
+
+                .div1 {
+                    background: red;
+                    grid-area: a;
+                }
+            }
+
+            .right {
+                grid-template-areas: "h2 h2 h2 h2" "a b c d" "e f g h";
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+
+                h2 {
+                    grid-area: h2;
+                }
+
+                .div1 {
+                    background: red;
+                    grid-area: a;
+                }
+
+                .div2 {
+                    background: grey;
+                    grid-area: b;
+                }
+
+                .div3 {
+                    background: blue;
+                    grid-area: c;
+                }
+
+                .div4 {
+                    background: yellow;
+                    grid-area: d;
+                }
+
+                .div5 {
+                    background: green;
+                    grid-area: e;
+                }
+
+                .div6 {
+                    background: purple;
+                    grid-area: f;
+                }
+
+                .div7 {
+                    background: lightblue;
+                    grid-area: g;
+                }
+
+                .div8 {
+                    background: pink;
+                    grid-area: h;
+                }
+            }
+        }
+    }
+
+    #last {
+        display: grid;
+        grid-template-areas: "h2 h2 h2 h2" "a b c d" "e e e e";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        h2 {
+            grid-area: h2;
+        }
+
+        .div1 {
+            background: red;
+            grid-area: a;
+        }
+
+        .div2 {
+            background: grey;
+            grid-area: b;
+        }
+
+        .div3 {
+            background: blue;
+            grid-area: c;
+        }
+
+        .div4 {
+            background: yellow;
+            grid-area: d;
+        }
+
+        .div5 {
+            background: green;
+            grid-area: e;
+        }
+    }
+    #orNot{
+        display: grid;
+        grid-template-areas: "f g h i j";
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        .div6 {
+            background: purple;
+            grid-area: f;
+        }
+
+        .div7 {
+            background: lightblue;
+            grid-area: g;
+        }
+
+        .div8 {
+            background: pink;
+            grid-area: h;
+        }
+
+        .div9 {
+            background: brown;
+            grid-area: i;
+        }
+
+        .div10 {
+            background: orange;
+            grid-area: j;
+        }
+    }
+    footer{
+        display: grid;
+        grid-template-areas: "a b c d e f g ";
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        h2 {
+            grid-area: h2;
+        }
+
+        .div1 {
+            background: red;
+            grid-area: a;
+        }
+
+        .div2 {
+            background: grey;
+            grid-area: b;
+        }
+
+        .div3 {
+            background: blue;
+            grid-area: c;
+        }
+
+        .div4 {
+            background: yellow;
+            grid-area: d;
+        }
+
+        .div5 {
+            background: green;
+            grid-area: e;
+        }
+        .div6 {
+            background: purple;
+            grid-area: f;
+        }
+
+        .div7 {
+            background: lightblue;
+            grid-area: g;
+        }
+    }
+}
