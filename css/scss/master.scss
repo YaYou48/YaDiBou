@@ -1,10 +1,7 @@
 body,
 html {
     width: 100%;
-}
-
-.nested {
-    display: grid;
+    margin: 0;
 }
 
 div {
@@ -27,8 +24,11 @@ div {
         grid-area: b;
 
         header {
-            grid-template-areas: "a a a a a a" "b c c c c c" "b d d d d d" "b e e e e e";
-            grid-template-columns: 1fr 5fr;
+            @media screen and (min-width: 1024px) {
+                display: grid;
+                grid-template-areas: "a a a a a a" "b c c c c c" "b d d d d d" "b e e e e e";
+                grid-template-columns: 1fr 5fr;
+            }
 
             .div1 {
                 background: red;
@@ -48,8 +48,11 @@ div {
             .div4 {
                 background: yellow;
                 grid-area: d;
-                grid-template-areas: "a b c d e";
-                grid-template-columns: 4fr 4fr 4fr 4fr 1fr;
+                @media screen and (min-width: 1024px) {
+                    display: grid;
+                    grid-template-areas: "a b c d e";
+                    grid-template-columns: 4fr 4fr 4fr 4fr 1fr;
+                }
             }
 
             .div5 {
@@ -60,7 +63,10 @@ div {
     }
 
     article {
-        grid-template-areas: "h1 h1 h1 h1" "a a b c" "a a d d" "e e f f";
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "h1 h1 h1 h1" "a a b c" "a a d d" "e e f f";
+        }
 
         h1 {
             grid-area: h1;
@@ -98,7 +104,10 @@ div {
     }
 
     figure {
-        grid-template-areas: "h2 h2 h2 h2 h2" "a b c d e";
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "h2 h2 h2 h2 h2" "a b c d e";
+        }
 
         h1 {
             grid-area: h2;
@@ -131,13 +140,19 @@ div {
     }
 
     section {
-        .nested {
-            grid-template-areas: "a b";
-            grid-template-columns: 1fr 1fr;
+        div {
+            @media screen and (min-width: 1024px) {
+                display: grid;
+                grid-template-areas: "a b";
+                grid-template-columns: 1fr 1fr;
+            }
 
             .left {
-                grid-template-areas: "h2" "a";
-                grid-template-columns: 1fr;
+                @media screen and (min-width: 1024px) {
+                    display: grid;
+                    grid-template-areas: "h2" "a";
+                    grid-template-columns: 1fr;
+                }
                 grid-area: a;
 
                 h2 {
@@ -151,8 +166,11 @@ div {
             }
 
             .right {
-                grid-template-areas: "h2 h2 h2 h2" "a b c d" "e f g h";
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                @media screen and (min-width: 1024px) {
+                    display: grid;
+                    grid-template-areas: "h2 h2 h2 h2" "a b c d" "e f g h";
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
 
                 h2 {
                     grid-area: h2;
@@ -202,9 +220,11 @@ div {
     }
 
     #last {
-        display: grid;
-        grid-template-areas: "h2 h2 h2 h2" "a b c d" "e e e e";
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "h2 h2 h2 h2" "a b c d" "e e e e";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
 
         h2 {
             grid-area: h2;
@@ -235,10 +255,14 @@ div {
             grid-area: e;
         }
     }
-    #orNot{
-        display: grid;
-        grid-template-areas: "f g h i j";
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    #orNot {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "f g h i j";
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
         .div6 {
             background: purple;
             grid-area: f;
@@ -264,10 +288,13 @@ div {
             grid-area: j;
         }
     }
-    footer{
-        display: grid;
-        grid-template-areas: "a b c d e f g ";
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    footer {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "a b c d e f g ";
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
 
         h2 {
             grid-area: h2;
@@ -297,6 +324,7 @@ div {
             background: green;
             grid-area: e;
         }
+
         .div6 {
             background: purple;
             grid-area: f;
