@@ -1,381 +1,653 @@
 body,
 html {
-  width: 100%;
-  margin: 0;
+    width: 100%;
+    margin: 0;
 }
 
 .container {
-  display: grid;
-  grid-template-areas: "a b";
-  grid-template-columns: 1fr 19fr;
+    display: grid;
+    grid-template-areas: "a b";
+    grid-template-columns: 1fr 19fr;
 
-  aside {
-    width: 100%;
-    height: 100%;
-    grid-area: a;
-    color: #fff;
-    background-color: #e1001a;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-    i {
-      padding-top: 1em;
-    }
-  }
-
-  .main {
-    grid-area: b;
-
-    header {
-      @media screen and (min-width: 1024px) {
-        display: grid;
-        grid-template-areas: "a a a a a a" "b c c c c c" "b c c c c c" "b c c c c c";
-        grid-template-columns: 1fr 5fr;
-      }
-
-      .div1 {
-        background-color: pink;
-        color: red;
+    aside {
+        width: 100%;
+        height: 100%;
         grid-area: a;
+        color: #fff;
+        background-color: #e1001a;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-      }
 
-      .div2 {
-        background: #333333;
+        i {
+            padding-top: 1em;
+        }
+    }
+
+    .main {
         grid-area: b;
 
-        .noir {
-          height: 33%;
+        header {
+            @media screen and (min-width: 1024px) {
+                display: grid;
+                grid-template-areas: "a a a a a a" "b c c c c c" "b c c c c c" "b c c c c c";
+                grid-template-columns: 1fr 5fr;
+            }
+
+            .div1 {
+                background-color: pink;
+                color: red;
+                grid-area: a;
+                text-align: center;
+            }
+
+            .div2 {
+                grid-area: b;
+                display: grid;
+                grid-template-areas: "a" "b" "b";
+
+                .noir {
+                    background: black;
+                    grid-area: a;
+                }
+
+                #accordion {
+                    grid-area: b;
+                    height: 100%;
+                }
+            }
+
+            .div5 {
+                background: green;
+                grid-area: c;
+                position: relative;
+
+                .carousel-caption {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                }
+
+                .connection {
+                    background: #efefef;
+
+                    .osef {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .coLeft {
+                            display: flex;
+
+                            p {
+                                margin: 1rem;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .coRight {
+                            display: flex;
+
+                            p {
+                                margin: 1rem;
+                                font-weight: bold;
+                            }
+
+                            select {
+                                height: 50%;
+                                background-color: #efefef;
+                                margin: 1rem;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                .menu {
+                    background: yellow;
+                    text-align: center;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+
+                        &:hover {
+                            font-weight: bold;
+                        }
+                    }
+                    @media screen and (min-width: 1024px) {
+                        display: grid;
+                        grid-template-areas: "a b c d e";
+                        grid-template-columns: 4fr 4fr 4fr 4fr 1fr;
+
+                        .menu1 {
+                            background: #97c300;
+                            padding: 1em;
+                        }
+
+                        .menu2 {
+                            background: #00adc1;
+                            padding: 1em;
+                        }
+
+                        .menu3 {
+                            background: #ff7437;
+                            padding: 1em;
+                        }
+
+                        .menu4 {
+                            background: #994dd1;
+                            padding: 1em;
+                        }
+
+                        .search {
+                            background: #efefef;
+                            padding: 1em;
+                        }
+                    }
+                }
+            }
         }
-      }
+    }
 
-      .div5 {
-        background: green;
-        grid-area: c;
-        position: relative;
-
-        .carousel-caption {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 100%;
-        }
-
-        .connection {
-          background: #efefef;
-        }
-
-        .menu {
-          background: yellow;
-          text-align: center;
-          @media screen and (min-width: 1024px) {
+    article {
+        padding: 1.5rem;
+        @media screen and (min-width: 1024px) {
             display: grid;
-            grid-template-areas: "a b c d e";
-            grid-template-columns: 4fr 4fr 4fr 4fr 1fr;
-
-            .menu1 {
-              background: #97c300;
-              padding: 1em;
-            }
-
-            .menu2 {
-              background: #00adc1;
-              padding: 1em;
-            }
-
-            .menu3 {
-              background: #ff7437;
-              padding: 1em;
-            }
-
-            .menu4 {
-              background: #994dd1;
-              padding: 1em;
-            }
-
-            .search {
-              background: #efefef;
-              padding: 1em;
-            }
-          }
+            grid-template-areas: "h1 h1 h1 h1" "a a b c" "a a d d" "e e f f";
+            grid-gap: 1.5rem;
         }
-      }
-    }
-  }
 
-  article {
-    @media screen and (min-width: 1024px) {
-      display: grid;
-      grid-template-areas: "h1 h1 h1 h1" "a a b c" "a a d d" "e e f f";
-    }
-
-    h1 {
-      grid-area: h1;
-    }
-
-    .div1 {
-      background: red;
-      grid-area: a;
-    }
-
-    .div2 {
-      background: grey;
-      grid-area: b;
-    }
-
-    .div3 {
-      background: blue;
-      grid-area: c;
-    }
-
-    .div4 {
-      background: yellow;
-      grid-area: d;
-    }
-
-    .div5 {
-      background: green;
-      grid-area: e;
-    }
-
-    .div6 {
-      background: purple;
-      grid-area: f;
-    }
-  }
-
-  figure {
-    @media screen and (min-width: 1024px) {
-      display: grid;
-      grid-template-areas: "h2 h2 h2 h2 h2" "a b c d e";
-    }
-
-    h1 {
-      grid-area: h2;
-    }
-
-    .div1 {
-      background: red;
-      grid-area: a;
-    }
-
-    .div2 {
-      background: grey;
-      grid-area: b;
-    }
-
-    .div3 {
-      background: blue;
-      grid-area: c;
-    }
-
-    .div4 {
-      background: yellow;
-      grid-area: d;
-    }
-
-    .div5 {
-      background: green;
-      grid-area: e;
-    }
-  }
-
-  section {
-    div {
-      @media screen and (min-width: 1024px) {
-        display: grid;
-        grid-template-areas: "a b";
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .left {
-        @media screen and (min-width: 1024px) {
-          display: grid;
-          grid-template-areas: "h2" "a";
-          grid-template-columns: 1fr;
-        }
-        grid-area: a;
-
-        h2 {
-          grid-area: h2;
+        h1 {
+            grid-area: h1;
         }
 
         .div1 {
-          background: red;
-          grid-area: a;
-        }
-      }
+            grid-area: a;
+            border: solid 0.1rem #9a9a99;
 
-      .right {
-        @media screen and (min-width: 1024px) {
-          display: grid;
-          grid-template-areas: "h2 h2 h2 h2" "a b c d" "e f g h";
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
+            h5 {
+                font-weight: bold;
+            }
 
-        h2 {
-          grid-area: h2;
-        }
+            hr {
+                color: #97c300;
+                width: 2rem;
+                border: solid 0.25rem #97c300;
+            }
 
-        .div1 {
-          background: red;
-          grid-area: a;
+            .osef {
+                padding-top: 2rem;
+                display: flex;
+                justify-content: space-between;
+
+                .green {
+                    color: #97c300;
+                    font-weight: bold;
+                    display: inline;
+                }
+
+                a {
+                    color: #9a9a99;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
         }
 
         .div2 {
-          background: grey;
-          grid-area: b;
+            grid-area: b;
+            border: solid 0.1rem #9a9a99;
+
+            h5 {
+                font-weight: bold;
+            }
+
+            hr {
+                color: #00acbf;
+                width: 2rem;
+                border: solid 0.25rem #00acbf;
+            }
+
+            p{
+                font-size: .8rem;
+            }
+
+            .osef {
+                padding-top: 2rem;
+                display: flex;
+                justify-content: space-between;
+
+                .green {
+                    color: #00acbf;
+                    font-weight: bold;
+                    display: inline;
+                }
+
+                a {
+                    color: #9a9a99;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
         }
 
         .div3 {
-          background: blue;
-          grid-area: c;
+            grid-area: c;
+            border: solid 0.1rem #9a9a99;
+
+            h5 {
+                font-weight: bold;
+            }
+
+            hr {
+                color: #97c300;
+                width: 2rem;
+                border: solid 0.25rem #97c300;
+            }
+
+            p{
+                font-size: .8rem;
+            }
+
+            .osef {
+                padding-top: 2rem;
+                padding-bottom: 0;
+                display: flex;
+                justify-content: space-between;
+
+                .green {
+                    color: #97c300;
+                    font-weight: bold;
+                    display: inline;
+                }
+
+                a {
+                    color: #9a9a99;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
         }
 
         .div4 {
-          background: yellow;
-          grid-area: d;
+            grid-area: d;
+            border: solid 0.1rem #9a9a99;
+
+            img {
+                float: left;
+                width: 50%;
+            }
+
+            h5 {
+                font-weight: bold;
+                font-size: .8rem;
+            }
+
+            p{
+                font-size: .8rem;
+            }
+
+            hr {
+                color: #ff7437;
+                width: 2rem;
+                border: solid 0.25rem #ff7437;
+            }
+            p{
+                font-size: .8rem;
+            }
+
+            .osef {
+                padding-top: 2rem;
+                display: flex;
+                justify-content: space-between;
+
+                .green {
+                    color: #ff7437;
+                    font-weight: bold;
+                    display: inline;
+                }
+
+                a {
+                    color: #9a9a99;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
         }
 
         .div5 {
-          background: green;
-          grid-area: e;
+            grid-area: e;
+            border: solid 0.1rem #9a9a99;
+
+            img {
+                float: left;
+            }
+
+            h5 {
+                font-weight: bold;
+            }
+
+            p{
+                font-size: .8rem;
+            }
+
+            hr {
+                color: #ff7437;
+                width: 2rem;
+                border: solid 0.25rem #ff7437;
+            }
+
+            .osef {
+                padding-top: 2rem;
+                display: flex;
+                justify-content: space-between;
+
+                .green {
+                    color: #ff7437;
+                    font-weight: bold;
+                    display: inline;
+                }
+
+                a {
+                    color: #9a9a99;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
         }
 
         .div6 {
-          background: purple;
-          grid-area: f;
+            grid-area: f;
+            border: solid 0.1rem #9a9a99;
+
+            img {
+                float: left;
+            }
+
+            h5 {
+                font-weight: bold;
+            }
+
+            p{
+                font-size: .8rem;
+            }
+
+            hr {
+                color: #00acbf;
+                width: 2rem;
+                border: solid 0.25rem #00acbf;
+            }
+
+            .osef {
+                padding-top: 2rem;
+                display: flex;
+                justify-content: space-between;
+
+                .green {
+                    color: #00acbf;
+                    font-weight: bold;
+                    display: inline;
+                }
+
+                a {
+                    color: #9a9a99;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    figure {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "h2 h2 h2 h2 h2" "a b c d e";
+        }
+
+        h1 {
+            grid-area: h2;
+        }
+
+        .div1 {
+            background: red;
+            grid-area: a;
+        }
+
+        .div2 {
+            background: grey;
+            grid-area: b;
+        }
+
+        .div3 {
+            background: blue;
+            grid-area: c;
+        }
+
+        .div4 {
+            background: yellow;
+            grid-area: d;
+        }
+
+        .div5 {
+            background: green;
+            grid-area: e;
+        }
+    }
+
+    section {
+        div {
+            @media screen and (min-width: 1024px) {
+                display: grid;
+                grid-template-areas: "a b";
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .left {
+                @media screen and (min-width: 1024px) {
+                    display: grid;
+                    grid-template-areas: "h2" "a";
+                    grid-template-columns: 1fr;
+                }
+                grid-area: a;
+
+                h2 {
+                    grid-area: h2;
+                }
+
+                .div1 {
+                    background: red;
+                    grid-area: a;
+                }
+            }
+
+            .right {
+                @media screen and (min-width: 1024px) {
+                    display: grid;
+                    grid-template-areas: "h2 h2 h2 h2" "a b c d" "e f g h";
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+
+                h2 {
+                    grid-area: h2;
+                }
+
+                .div1 {
+                    background: red;
+                    grid-area: a;
+                }
+
+                .div2 {
+                    background: grey;
+                    grid-area: b;
+                }
+
+                .div3 {
+                    background: blue;
+                    grid-area: c;
+                }
+
+                .div4 {
+                    background: yellow;
+                    grid-area: d;
+                }
+
+                .div5 {
+                    background: green;
+                    grid-area: e;
+                }
+
+                .div6 {
+                    background: purple;
+                    grid-area: f;
+                }
+
+                .div7 {
+                    background: lightblue;
+                    grid-area: g;
+                }
+
+                .div8 {
+                    background: pink;
+                    grid-area: h;
+                }
+            }
+        }
+    }
+
+    #last {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "h2 h2 h2 h2" "a b c d" "e e e e";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        h2 {
+            grid-area: h2;
+        }
+
+        .div1 {
+            background: red;
+            grid-area: a;
+        }
+
+        .div2 {
+            background: grey;
+            grid-area: b;
+        }
+
+        .div3 {
+            background: blue;
+            grid-area: c;
+        }
+
+        .div4 {
+            background: yellow;
+            grid-area: d;
+        }
+
+        .div5 {
+            background: green;
+            grid-area: e;
+        }
+    }
+
+    #orNot {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "f g h i j";
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .div6 {
+            background: purple;
+            grid-area: f;
         }
 
         .div7 {
-          background: lightblue;
-          grid-area: g;
+            background: lightblue;
+            grid-area: g;
         }
 
         .div8 {
-          background: pink;
-          grid-area: h;
+            background: pink;
+            grid-area: h;
         }
-      }
-    }
-  }
 
-  #last {
-    @media screen and (min-width: 1024px) {
-      display: grid;
-      grid-template-areas: "h2 h2 h2 h2" "a b c d" "e e e e";
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
+        .div9 {
+            background: brown;
+            grid-area: i;
+        }
 
-    h2 {
-      grid-area: h2;
+        .div10 {
+            background: orange;
+            grid-area: j;
+        }
     }
 
-    .div1 {
-      background: red;
-      grid-area: a;
-    }
+    footer {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "a b c d e f g ";
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
 
-    .div2 {
-      background: grey;
-      grid-area: b;
-    }
+        h2 {
+            grid-area: h2;
+        }
 
-    .div3 {
-      background: blue;
-      grid-area: c;
-    }
+        .div1 {
+            background: red;
+            grid-area: a;
+        }
 
-    .div4 {
-      background: yellow;
-      grid-area: d;
-    }
+        .div2 {
+            background: grey;
+            grid-area: b;
+        }
 
-    .div5 {
-      background: green;
-      grid-area: e;
-    }
-  }
+        .div3 {
+            background: blue;
+            grid-area: c;
+        }
 
-  #orNot {
-    @media screen and (min-width: 1024px) {
-      display: grid;
-      grid-template-areas: "f g h i j";
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
+        .div4 {
+            background: yellow;
+            grid-area: d;
+        }
 
-    .div6 {
-      background: purple;
-      grid-area: f;
-    }
+        .div5 {
+            background: green;
+            grid-area: e;
+        }
 
-    .div7 {
-      background: lightblue;
-      grid-area: g;
-    }
+        .div6 {
+            background: purple;
+            grid-area: f;
+        }
 
-    .div8 {
-      background: pink;
-      grid-area: h;
+        .div7 {
+            background: lightblue;
+            grid-area: g;
+        }
     }
-
-    .div9 {
-      background: brown;
-      grid-area: i;
-    }
-
-    .div10 {
-      background: orange;
-      grid-area: j;
-    }
-  }
-
-  footer {
-    @media screen and (min-width: 1024px) {
-      display: grid;
-      grid-template-areas: "a b c d e f g ";
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
-
-    h2 {
-      grid-area: h2;
-    }
-
-    .div1 {
-      background: red;
-      grid-area: a;
-    }
-
-    .div2 {
-      background: grey;
-      grid-area: b;
-    }
-
-    .div3 {
-      background: blue;
-      grid-area: c;
-    }
-
-    .div4 {
-      background: yellow;
-      grid-area: d;
-    }
-
-    .div5 {
-      background: green;
-      grid-area: e;
-    }
-
-    .div6 {
-      background: purple;
-      grid-area: f;
-    }
-
-    .div7 {
-      background: lightblue;
-      grid-area: g;
-    }
-  }
 }
