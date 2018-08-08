@@ -1,345 +1,381 @@
 body,
 html {
-    width: 100%;
-    margin: 0;
-}
-
-div {
-    border: 1px white solid;
+  width: 100%;
+  margin: 0;
 }
 
 .container {
-    display: grid;
-    grid-template-areas: "a b";
-    grid-template-columns: 1fr 19fr;
+  display: grid;
+  grid-template-areas: "a b";
+  grid-template-columns: 1fr 19fr;
 
-    aside {
-      width: 100%;
-      height: 100%;
-      grid-area: a;
-      color: #fff;
-      background-color: black;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      i {
-        padding-top: 1em;
-      }
+  aside {
+    width: 100%;
+    height: 100%;
+    grid-area: a;
+    color: #fff;
+    background-color: #e1001a;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    i {
+      padding-top: 1em;
     }
+  }
 
-    .main {
+  .main {
+    grid-area: b;
+
+    header {
+      @media screen and (min-width: 1024px) {
+        display: grid;
+        grid-template-areas: "a a a a a a" "b c c c c c" "b c c c c c" "b c c c c c";
+        grid-template-columns: 1fr 5fr;
+      }
+
+      .div1 {
+        background-color: pink;
+        color: red;
+        grid-area: a;
+        text-align: center;
+      }
+
+      .div2 {
+        background: #333333;
         grid-area: b;
 
-        header {
-            @media screen and (min-width: 1024px) {
-                display: grid;
-                grid-template-areas: "a a a a a a" "b c c c c c" "b d d d d d" "b e e e e e";
-                grid-template-columns: 1fr 5fr;
-            }
-
-            .div1 {
-                background: red;
-                grid-area: a;
-            }
-
-            .div2 {
-                background: grey;
-                grid-area: b;
-            }
-
-            .div3 {
-                background: blue;
-                grid-area: c;
-            }
-
-            .div4 {
-                background: yellow;
-                grid-area: d;
-                @media screen and (min-width: 1024px) {
-                    display: grid;
-                    grid-template-areas: "a b c d e";
-                    grid-template-columns: 4fr 4fr 4fr 4fr 1fr;
-                }
-            }
-
-            .div5 {
-                background: green;
-                grid-area: e;
-            }
+        .noir {
+          height: 33%;
         }
+      }
+
+      .div5 {
+        background: green;
+        grid-area: c;
+        position: relative;
+
+        .carousel-caption {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+        }
+
+        .connection {
+          background: #efefef;
+        }
+
+        .menu {
+          background: yellow;
+          text-align: center;
+          @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-areas: "a b c d e";
+            grid-template-columns: 4fr 4fr 4fr 4fr 1fr;
+
+            .menu1 {
+              background: #97c300;
+              padding: 1em;
+            }
+
+            .menu2 {
+              background: #00adc1;
+              padding: 1em;
+            }
+
+            .menu3 {
+              background: #ff7437;
+              padding: 1em;
+            }
+
+            .menu4 {
+              background: #994dd1;
+              padding: 1em;
+            }
+
+            .search {
+              background: #efefef;
+              padding: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  article {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-areas: "h1 h1 h1 h1" "a a b c" "a a d d" "e e f f";
     }
 
-    article {
-        @media screen and (min-width: 1024px) {
-            display: grid;
-            grid-template-areas: "h1 h1 h1 h1" "a a b c" "a a d d" "e e f f";
-        }
+    h1 {
+      grid-area: h1;
+    }
 
-        h1 {
-            grid-area: h1;
+    .div1 {
+      background: red;
+      grid-area: a;
+    }
+
+    .div2 {
+      background: grey;
+      grid-area: b;
+    }
+
+    .div3 {
+      background: blue;
+      grid-area: c;
+    }
+
+    .div4 {
+      background: yellow;
+      grid-area: d;
+    }
+
+    .div5 {
+      background: green;
+      grid-area: e;
+    }
+
+    .div6 {
+      background: purple;
+      grid-area: f;
+    }
+  }
+
+  figure {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-areas: "h2 h2 h2 h2 h2" "a b c d e";
+    }
+
+    h1 {
+      grid-area: h2;
+    }
+
+    .div1 {
+      background: red;
+      grid-area: a;
+    }
+
+    .div2 {
+      background: grey;
+      grid-area: b;
+    }
+
+    .div3 {
+      background: blue;
+      grid-area: c;
+    }
+
+    .div4 {
+      background: yellow;
+      grid-area: d;
+    }
+
+    .div5 {
+      background: green;
+      grid-area: e;
+    }
+  }
+
+  section {
+    div {
+      @media screen and (min-width: 1024px) {
+        display: grid;
+        grid-template-areas: "a b";
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .left {
+        @media screen and (min-width: 1024px) {
+          display: grid;
+          grid-template-areas: "h2" "a";
+          grid-template-columns: 1fr;
+        }
+        grid-area: a;
+
+        h2 {
+          grid-area: h2;
         }
 
         .div1 {
-            background: red;
-            grid-area: a;
+          background: red;
+          grid-area: a;
         }
+      }
 
-        .div2 {
-            background: grey;
-            grid-area: b;
-        }
-
-        .div3 {
-            background: blue;
-            grid-area: c;
-        }
-
-        .div4 {
-            background: yellow;
-            grid-area: d;
-        }
-
-        .div5 {
-            background: green;
-            grid-area: e;
-        }
-
-        .div6 {
-            background: purple;
-            grid-area: f;
-        }
-    }
-
-    figure {
+      .right {
         @media screen and (min-width: 1024px) {
-            display: grid;
-            grid-template-areas: "h2 h2 h2 h2 h2" "a b c d e";
-        }
-
-        h1 {
-            grid-area: h2;
-        }
-
-        .div1 {
-            background: red;
-            grid-area: a;
-        }
-
-        .div2 {
-            background: grey;
-            grid-area: b;
-        }
-
-        .div3 {
-            background: blue;
-            grid-area: c;
-        }
-
-        .div4 {
-            background: yellow;
-            grid-area: d;
-        }
-
-        .div5 {
-            background: green;
-            grid-area: e;
-        }
-    }
-
-    section {
-        div {
-            @media screen and (min-width: 1024px) {
-                display: grid;
-                grid-template-areas: "a b";
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .left {
-                @media screen and (min-width: 1024px) {
-                    display: grid;
-                    grid-template-areas: "h2" "a";
-                    grid-template-columns: 1fr;
-                }
-                grid-area: a;
-
-                h2 {
-                    grid-area: h2;
-                }
-
-                .div1 {
-                    background: red;
-                    grid-area: a;
-                }
-            }
-
-            .right {
-                @media screen and (min-width: 1024px) {
-                    display: grid;
-                    grid-template-areas: "h2 h2 h2 h2" "a b c d" "e f g h";
-                    grid-template-columns: 1fr 1fr 1fr 1fr;
-                }
-
-                h2 {
-                    grid-area: h2;
-                }
-
-                .div1 {
-                    background: red;
-                    grid-area: a;
-                }
-
-                .div2 {
-                    background: grey;
-                    grid-area: b;
-                }
-
-                .div3 {
-                    background: blue;
-                    grid-area: c;
-                }
-
-                .div4 {
-                    background: yellow;
-                    grid-area: d;
-                }
-
-                .div5 {
-                    background: green;
-                    grid-area: e;
-                }
-
-                .div6 {
-                    background: purple;
-                    grid-area: f;
-                }
-
-                .div7 {
-                    background: lightblue;
-                    grid-area: g;
-                }
-
-                .div8 {
-                    background: pink;
-                    grid-area: h;
-                }
-            }
-        }
-    }
-
-    #last {
-        @media screen and (min-width: 1024px) {
-            display: grid;
-            grid-template-areas: "h2 h2 h2 h2" "a b c d" "e e e e";
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+          display: grid;
+          grid-template-areas: "h2 h2 h2 h2" "a b c d" "e f g h";
+          grid-template-columns: 1fr 1fr 1fr 1fr;
         }
 
         h2 {
-            grid-area: h2;
+          grid-area: h2;
         }
 
         .div1 {
-            background: red;
-            grid-area: a;
+          background: red;
+          grid-area: a;
         }
 
         .div2 {
-            background: grey;
-            grid-area: b;
+          background: grey;
+          grid-area: b;
         }
 
         .div3 {
-            background: blue;
-            grid-area: c;
+          background: blue;
+          grid-area: c;
         }
 
         .div4 {
-            background: yellow;
-            grid-area: d;
+          background: yellow;
+          grid-area: d;
         }
 
         .div5 {
-            background: green;
-            grid-area: e;
-        }
-    }
-
-    #orNot {
-        @media screen and (min-width: 1024px) {
-            display: grid;
-            grid-template-areas: "f g h i j";
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          background: green;
+          grid-area: e;
         }
 
         .div6 {
-            background: purple;
-            grid-area: f;
+          background: purple;
+          grid-area: f;
         }
 
         .div7 {
-            background: lightblue;
-            grid-area: g;
+          background: lightblue;
+          grid-area: g;
         }
 
         .div8 {
-            background: pink;
-            grid-area: h;
+          background: pink;
+          grid-area: h;
         }
+      }
+    }
+  }
 
-        .div9 {
-            background: brown;
-            grid-area: i;
-        }
-
-        .div10 {
-            background: orange;
-            grid-area: j;
-        }
+  #last {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-areas: "h2 h2 h2 h2" "a b c d" "e e e e";
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
-    footer {
-        @media screen and (min-width: 1024px) {
-            display: grid;
-            grid-template-areas: "a b c d e f g ";
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        }
-
-        h2 {
-            grid-area: h2;
-        }
-
-        .div1 {
-            background: red;
-            grid-area: a;
-        }
-
-        .div2 {
-            background: grey;
-            grid-area: b;
-        }
-
-        .div3 {
-            background: blue;
-            grid-area: c;
-        }
-
-        .div4 {
-            background: yellow;
-            grid-area: d;
-        }
-
-        .div5 {
-            background: green;
-            grid-area: e;
-        }
-
-        .div6 {
-            background: purple;
-            grid-area: f;
-        }
-
-        .div7 {
-            background: lightblue;
-            grid-area: g;
-        }
+    h2 {
+      grid-area: h2;
     }
+
+    .div1 {
+      background: red;
+      grid-area: a;
+    }
+
+    .div2 {
+      background: grey;
+      grid-area: b;
+    }
+
+    .div3 {
+      background: blue;
+      grid-area: c;
+    }
+
+    .div4 {
+      background: yellow;
+      grid-area: d;
+    }
+
+    .div5 {
+      background: green;
+      grid-area: e;
+    }
+  }
+
+  #orNot {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-areas: "f g h i j";
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .div6 {
+      background: purple;
+      grid-area: f;
+    }
+
+    .div7 {
+      background: lightblue;
+      grid-area: g;
+    }
+
+    .div8 {
+      background: pink;
+      grid-area: h;
+    }
+
+    .div9 {
+      background: brown;
+      grid-area: i;
+    }
+
+    .div10 {
+      background: orange;
+      grid-area: j;
+    }
+  }
+
+  footer {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-areas: "a b c d e f g ";
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    h2 {
+      grid-area: h2;
+    }
+
+    .div1 {
+      background: red;
+      grid-area: a;
+    }
+
+    .div2 {
+      background: grey;
+      grid-area: b;
+    }
+
+    .div3 {
+      background: blue;
+      grid-area: c;
+    }
+
+    .div4 {
+      background: yellow;
+      grid-area: d;
+    }
+
+    .div5 {
+      background: green;
+      grid-area: e;
+    }
+
+    .div6 {
+      background: purple;
+      grid-area: f;
+    }
+
+    .div7 {
+      background: lightblue;
+      grid-area: g;
+    }
+  }
 }
